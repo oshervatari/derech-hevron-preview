@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>דרך חברון 116 - פורטל הדיירים | קבוצת גלנור</title>
+  <meta name="description" content="האתר הרשמי לדיירי פרויקט הפינוי-בינוי בדרך חברון 116, ירושלים. כל המידע על תהליך בחירת דירת התמורה, סטטוס הפרויקט, זכויות, מסמכים ועדכונים - במקום אחד." />
+  <!-- Design concept route — not indexed while the original page is live -->
+  <meta name="robots" content="noindex" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/redesign.css" />
+</head>
+<body>
+  <a href="#actions" class="skip">דלג לתוכן</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="brand" href="#top" aria-label="דרך חברון 116 - קבוצת גלנור">
+        <img class="brand__logo" src="assets/img/glanor-logo.svg" alt="קבוצת גלנור" width="117" height="36" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="#status">סטטוס הפרויקט</a></li>
+        <li><a href="#process">תהליך הבחירה</a></li>
+        <li><a href="#about">על הפרויקט</a></li>
+        <li><a href="#docs">מסמכים</a></li>
+        <li><a href="#faq">שאלות נפוצות</a></li>
+        <li><a href="#help">עזרה</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="residents.html#personal" class="btn btn--primary">האזור האישי שלי</a>
+        <button class="nav__toggle" data-nav-toggle data-icon="menu" aria-label="תפריט"></button>
+      </div>
+    </div>
+    <nav class="nav__mobile" data-nav-mobile aria-label="תפריט נייד">
+      <a href="#actions">לוח פעולות</a>
+      <a href="#status">סטטוס הפרויקט</a>
+      <a href="#process">תהליך הבחירה</a>
+      <a href="#about">על הפרויקט</a>
+      <a href="#docs">מסמכים</a>
+      <a href="#faq">שאלות נפוצות</a>
+      <a href="#help">צריכים עזרה?</a>
+      <a href="residents.html#personal">האזור האישי שלי</a>
+    </nav>
+  </header>
+
+  <!-- ============ HERO — full-bleed rendering, editorial headline ============ -->
+  <section class="hero" id="top">
+    <div class="container hero__content" data-stagger>
+      <span class="kicker reveal">האתר הרשמי לדיירי הפרויקט</span>
+      <h1 class="reveal">הבית החדש שלכם<br>בדרך חברון 116</h1>
+      <p class="sub reveal">אנחנו יודעים שמעבר מהבית הוא תהליך משמעותי. לכן ריכזנו עבורכם במקום אחד את כל המידע, השלבים והכלים - כדי שתוכלו להכיר את הפרויקט, לעקוב אחר התקדמותו ולקבל החלטות בביטחון לקראת בחירת הדירה החדשה שלכם.</p>
+      <div class="hero__cta-block reveal">
+        <div class="ctas">
+          <a href="residents.html#personal" class="btn btn--primary">האזור האישי שלי</a>
+          <a href="#process" class="btn btn--outline-light">תהליך בחירת הדירה</a>
+        </div>
+        <div class="ctas ctas--meta">
+          <span class="status-pill">שלב נוכחי: היתר חפירה ודיפון</span>
+          <span class="updated" data-icon="check"> <span data-updated></span></span>
+        </div>
+      </div>
+    </div>
+    <div class="hero__stats">
+      <div class="hero__stat"><b data-count="30">30</b><small>קומות</small></div>
+      <div class="hero__stat"><b data-count="127">127</b><small>דירות חדשות</small></div>
+      <div class="hero__stat"><b data-count="40">40</b><small>דירות תמורה</small></div>
+    </div>
+  </section>
+
+  <!-- ============ ACTION BOARD — editorial index, no cards ============ -->
+  <section class="sect--sm" id="actions">
+    <div class="container">
+      <div class="actions" data-stagger>
+        <a class="action reveal" href="#process">
+          <span class="action__n">01</span>
+          <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="6" cy="19" r="2.6"/><circle cx="18" cy="5" r="2.6"/><path d="M8.6 19h6.9a3.5 3.5 0 0 0 0-7H8.5a3.5 3.5 0 0 1 0-7h6.9"/></svg>
+          <h3>תהליך בחירת הדירה</h3>
+          <p>הסבר על השלבים, סדר הבחירה והקריטריונים.</p>
+          <span class="go">לצפייה בתהליך <span data-icon="arrow"></span></span>
+        </a>
+        <a class="action reveal" href="residents.html#catalog">
+          <span class="action__n">02</span>
+          <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 3 3 21"/><path d="M9 3H3v6"/><path d="M21 15v6h-6"/></svg>
+          <h3>קטלוג דירות התמורה</h3>
+          <p>צפייה בדגמים, בשטחים ובתשריטי הדירות.</p>
+          <span class="go">לקטלוג <span data-icon="arrow"></span></span>
+        </a>
+        <a class="action reveal" href="residents.html#map">
+          <span class="action__n">03</span>
+          <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 22V12h6v10"/><path d="M6 22V8l6-5 6 5v14"/><path d="M10 8h.01M14 8h.01M10 12h.01M14 12h.01"/></svg>
+          <h3>מפת זמינות הדירות</h3>
+          <p>אילו דירות פנויות, שמורות או נבחרו - לפי קומה.</p>
+          <span class="go">לבדיקת זמינות <span data-icon="arrow"></span></span>
+        </a>
+        <a class="action reveal" href="residents.html#personal">
+          <span class="action__n">04</span>
+          <svg class="action__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/></svg>
+          <h3>האזור האישי שלי</h3>
+          <p>הזכאות שלי, מיקומי בתור, מסמכים וסטטוס.</p>
+          <span class="go">כניסה לאזור האישי <span data-icon="arrow"></span></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ PROJECT STATUS / TIMELINE ============ -->
+  <section class="sect" id="status">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">איפה אנחנו עומדים</span>
+        <span class="rule"></span>
+        <h2>סטטוס הפרויקט</h2>
+      </div>
+
+      <div class="status-grid mt-4">
+        <ol class="timeline" data-stagger>
+          <li class="tl-item now reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-body"><h3>תכנון ואישורים <span class="tl-status now">בתהליך</span></h3>
+            <p>התב״ע אושרה. כעת מקודמת הבקשה להיתר חפירה ודיפון, ולאחריה היתר הבנייה המלא.<br><b>מה נדרש מכם:</b> אין פעולה נדרשת בשלב זה.</p></div>
+          </li>
+          <li class="tl-item now reveal">
+            <span class="tl-dot"></span>
+            <!-- TODO(admin): לאשר את סטטוס החתימות בפועל (הושלם / בתהליך) -->
+            <div class="tl-body"><h3>חתימות <span class="tl-status now">בתהליך</span></h3>
+            <p>חתימת בעלי הדירות על הסכם הפינוי-בינוי. תאריך החתימה שלכם קובע את מיקומכם בסדר בחירת הדירות.<br><b>מה נדרש מכם:</b> לשאלות על ההסכם או השלמת חתימה - פנו למנהל קשרי הדיירים.</p></div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-body"><h3>הכנות לפינוי <span class="tl-status future">שלב עתידי</span></h3>
+            <p>לוחות זמנים, הנחיות וליווי אישי יפורסמו כאן ובעדכון אישי לכל דייר, מבעוד מועד.<br><b>מה נדרש מכם:</b> כלום בשלב זה - נעדכן אתכם מראש.</p></div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-body"><h3>פינוי ומעבר <span class="tl-status future">שלב עתידי</span></h3>
+            <p>מעבר לדיור זמני בהתאם להסדרים הקבועים בהסכם.<br><b>מה נדרש מכם:</b> תיאום המעבר עם מנהל קשרי הדיירים, שילווה אתכם לאורך כל הדרך.</p></div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-body"><h3>הריסה <span class="tl-status future">שלב עתידי</span></h3>
+            <p>הריסת הבניין הקיים לאחר השלמת הפינוי.<br><b>מה נדרש מכם:</b> אין פעולה נדרשת.</p></div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-body"><h3>בנייה <span class="tl-status future">שלב עתידי</span></h3>
+            <p>בניית המגדל החדש. נשתף עדכוני התקדמות שוטפים באזור העדכונים.<br><b>מה נדרש מכם:</b> אין פעולה נדרשת - רק לעקוב אחר העדכונים.</p></div>
+          </li>
+          <li class="tl-item reveal">
+            <span class="tl-dot"></span>
+            <div class="tl-body"><h3>מסירה ואכלוס <span class="tl-status future">שלב עתידי</span></h3>
+            <p>השלמת הבנייה, קבלת טופס אכלוס ומסירת המפתחות.<br><b>מה נדרש מכם:</b> קבלת המפתח לדירה החדשה שלכם.</p></div>
+          </li>
+        </ol>
+
+        <div class="updates reveal">
+          <h3>עדכונים אחרונים</h3>
+          <div class="mt-2" id="updates">
+            <div class="update"><time>יולי 2026</time><h3>פורטל הדיירים עלה לאוויר</h3><p>מעכשיו כל המידע על הפרויקט ותהליך הבחירה מרוכז כאן.</p></div>
+            <div class="update"><time>2026</time><h3>הוגשה בקשה להיתר חפירה ודיפון</h3><p>הפרויקט התקדם לשלב ההיתרים לאחר אישור התב״ע.</p></div>
+            <!-- TODO(admin): להוסיף עדכונים חדשים כאן, החדש למעלה -->
+          </div>
+          <div class="updates__icon icon-draw reveal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><rect pathLength="1" x="3" y="4" width="18" height="18" rx="2"/><path pathLength="1" d="M16 2v4M8 2v4M3 10h18"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTION PROCESS — dark navy statement section ============ -->
+  <section class="sect bg-navy" id="process">
+    <!-- decorative route: rounded endpoints + edge lines, SVG built in redesign.js -->
+    <div class="route-deco icon-draw reveal" aria-hidden="true"></div>
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">הדבר החשוב ביותר</span>
+        <span class="rule"></span>
+        <h2>תהליך בחירת דירת התמורה</h2>
+        <p class="lead" style="color:rgba(255,255,255,.7)">כך ייראה התהליך, שלב אחרי שלב. בכל שלב תקבלו הודעה מסודרת ותדעו בדיוק מה נדרש מכם.</p>
+      </div>
+
+      <div class="flow" data-stagger>
+        <div class="flow-step reveal"><h3>היכרות עם תמהיל הדירות</h3><p>עיון בקטלוג הדגמים והתשריטים.</p></div>
+        <div class="flow-step reveal"><h3>קביעת סדר הבחירה</h3><p>לפי תאריך חתימת ההסכם של כל בעל דירה.</p></div>
+        <div class="flow-step reveal"><h3>בחירת דירה</h3><p>מתוך הדירות הפנויות, בהתאם לזכאות ולסדר.</p></div>
+        <div class="flow-step reveal"><h3>אישור הבחירה</h3><p>חתימה על נספח הבחירה מול נציג הפרויקט.</p></div>
+        <div class="flow-step reveal"><h3>מעבר לדירה החדשה</h3><p>קבלת המפתח עם השלמת הבנייה.</p></div>
+      </div>
+
+      <h3 class="mt-4 reveal" style="color:#fff;font-size:1.4rem">איך זה עובד בפועל?</h3>
+      <div class="qa mt-3" data-stagger>
+        <div class="qa-item reveal">
+          <h3>מי בוחר ראשון?</h3>
+          <p>סדר הבחירה נקבע לפי תאריך חתימת ההסכם - מי שחתם מוקדם יותר, בוחר מוקדם יותר.</p>
+        </div>
+        <div class="qa-item reveal">
+          <h3>מה קורה בשוויון?</h3>
+          <p>אם כמה בעלי דירות חתמו באותו תאריך, הסדר הפנימי ביניהם נקבע בהגרלה.</p>
+        </div>
+        <div class="qa-item reveal">
+          <h3>מה הזכאות שלי?</h3>
+          <p>שטח דירת התמורה שלכם קבוע בנספח א׳ של ההסכם, ומוצג באזור האישי.</p>
+        </div>
+        <div class="qa-item reveal">
+          <h3>אילו דירות זמינות?</h3>
+          <p>מפת הזמינות מציגה בכל רגע אילו דירות פנויות, שמורות או נבחרו.</p>
+        </div>
+        <div class="qa-item reveal">
+          <h3>אפשר לשדרג בתוספת תשלום?</h3>
+          <!-- TODO(admin): לאשר את מדיניות השדרוג מול ההסכם ולעדכן את הנוסח -->
+          <p>אפשרויות שדרוג נבחנות בהתאם להסכם ולזמינות. מנהל קשרי הדיירים ישמח לפרט.</p>
+        </div>
+        <div class="qa-item reveal">
+          <h3>מי מלווה אותי?</h3>
+          <p>מנהל קשרי הדיירים מלווה אתכם אישית לאורך כל התהליך - משלב ההיכרות ועד המפתח.</p>
+        </div>
+      </div>
+
+      <div class="center mt-4 reveal">
+        <a href="residents.html#map" class="btn btn--outline-light">לצפייה בדירות ובזמינות המעודכנת</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ ENTITLEMENTS (resident facts, shown once) ============ -->
+  <section class="sect--sm" id="rights">
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">מה מגיע לכל דירת תמורה</span>
+        <h2 style="font-size:1.8rem">הזכויות שלכם, בקצרה</h2>
+      </div>
+      <div class="facts mt-4" data-stagger>
+        <div class="fact reveal"><span data-icon="car"></span><b>חניה תת־קרקעית</b><small>לכל דירת תמורה</small></div>
+        <div class="fact reveal"><span data-icon="box"></span><b>מחסן צמוד</b><small>בשטח 5 מ״ר לפחות</small></div>
+        <div class="fact reveal"><span data-icon="sparkle"></span><b>מרפסת</b><small>בכל דירת תמורה</small></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FULL-BLEED RENDERING — visual transition ============ -->
+  <!-- TODO: להחזיר לכאן הדמיה כשתתקבל תמונה חדשה (היה: renders/tower-boulevard-v2.jpg) -->
+  <figure class="bleed bleed--pano bleed--pending" style="margin:0" aria-hidden="true"></figure>
+
+  <!-- ============ ABOUT (short) + existing-vs-future diagram ============ -->
+  <section class="sect" id="about">
+    <div class="container">
+      <div class="about-grid">
+        <div class="reveal">
+          <span class="eyebrow">על הפרויקט</span>
+          <span class="rule"></span>
+          <h2>מה נבנה כאן?</h2>
+          <p>במקום בניין הרכבת הוותיק משנות ה-70 יוקם מגדל מגורים מודרני, עם חזית מסחרית לרחוב, מוסדות ציבור ושטחים שישרתו את דיירי הפרויקט ואת השכונה.</p>
+          <p>בקומות הגבוהות - נוף פתוח לכיוון מדבר יהודה וים המלח.</p>
+          <div class="transform">
+            <div class="tr-col old reveal">
+              <h3>המצב הקיים</h3>
+              <ul>
+                <li>בניין רכבת משנות ה-70</li>
+                <li>40 יחידות דיור</li>
+                <li>מבנה גן ילדים</li>
+              </ul>
+            </div>
+            <div class="tr-arrow reveal" data-icon="arrow" aria-hidden="true"></div>
+            <div class="tr-col new reveal">
+              <h3>המצב החדש</h3>
+              <ul>
+                <li>מגדל בן 30 קומות, 127 דירות</li>
+                <li>דירות 3-5 חד׳, דופלקסים ופנטהאוזים</li>
+                <li>חזית מסחרית + 3 גני ילדים + בית כנסת</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="reveal-zoom"><img class="about-img" src="assets/img/renders/tower-day.jpg" alt="הדמיית המגדל החדש - להמחשה בלבד" loading="lazy" /></div>
+      </div>
+      <p class="disclaimer mt-4">ההדמיות להמחשה בלבד וכפופות לתכנון המאושר ולהיתר הבנייה.</p>
+    </div>
+  </section>
+
+  <!-- ============ PUBLIC FACILITIES ============ -->
+  <section class="sect--sm bg-navy" id="facilities">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">מה עוד יהיה בבניין</span>
+        <span class="rule"></span>
+        <h2 style="font-size:1.8rem">שירותים לדיירים ולשכונה</h2>
+      </div>
+      <div class="facilities mt-4" data-stagger>
+        <div class="facility reveal"><span data-icon="layers"></span><h3>חזית מסחרית</h3><p>חנויות ושירותים בקומת הרחוב, לנוחות יומיומית.</p></div>
+        <div class="facility reveal"><span data-icon="user"></span><h3>שלושה גני ילדים</h3><p>מוסדות חינוך חדשים בתוך הפרויקט.</p></div>
+        <div class="facility reveal"><span data-icon="sparkle"></span><h3>בית כנסת חדש</h3><p>לרווחת דיירי הפרויקט והסביבה.</p></div>
+        <div class="facility reveal"><span data-icon="car"></span><h3>חניון תת־קרקעי</h3><p>כולל חניה שמורה לכל דירת תמורה.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ APARTMENT MIX (data-driven) ============ -->
+  <section class="sect--sm bg-stone" id="mix">
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">תמהיל הדירות</span>
+        <h2 style="font-size:1.8rem">אילו דירות יש במגדל?</h2>
+      </div>
+      <div class="mix mt-4" id="mix-summary" data-stagger></div>
+      <div class="center mt-4 reveal">
+        <a href="residents.html#catalog" class="link-arrow" data-icon-after="arrow">לקטלוג המלא ולתשריטי הדירות</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ DOCUMENTS ============ -->
+  <section class="sect bg-navy" id="docs">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">מסמכים ותשריטים</span>
+        <span class="rule"></span>
+        <h2 style="font-size:1.8rem">מסמכים להורדה</h2>
+      </div>
+      <div class="dl reveal">
+        <a class="dl-row" href="assets/plans/floor-typical-A.pdf" target="_blank" rel="noopener">
+          <span class="dl-row__no">01</span>
+          <span class="dl-row__t">תשריט קומה טיפוסית א׳<small>קומות 2, 4, 6, 8, 10, 14, 16, 18, 20, 22</small></span>
+          <span class="dl-row__meta">PDF · 522KB</span>
+          <span class="dl-row__type">PDF</span>
+          <span class="dl-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+        </a>
+        <a class="dl-row" href="assets/plans/floor-typical-B.pdf" target="_blank" rel="noopener">
+          <span class="dl-row__no">02</span>
+          <span class="dl-row__t">תשריט קומה טיפוסית ב׳<small>קומות 3, 5, 7, 9, 13, 15, 17, 19, 21</small></span>
+          <span class="dl-row__meta">PDF · 520KB</span>
+          <span class="dl-row__type">PDF</span>
+          <span class="dl-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+        </a>
+        <a class="dl-row" href="assets/plans/floor-11.pdf" target="_blank" rel="noopener">
+          <span class="dl-row__no">03</span>
+          <span class="dl-row__t">תשריט קומה 11</span>
+          <span class="dl-row__meta">PDF · 476KB</span>
+          <span class="dl-row__type">PDF</span>
+          <span class="dl-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+        </a>
+        <a class="dl-row" href="assets/plans/floor-12.pdf" target="_blank" rel="noopener">
+          <span class="dl-row__no">04</span>
+          <span class="dl-row__t">תשריט קומה 12</span>
+          <span class="dl-row__meta">PDF · 517KB</span>
+          <span class="dl-row__type">PDF</span>
+          <span class="dl-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+        </a>
+        <a class="dl-row" href="assets/plans/floor-typical-D-23-26.pdf" target="_blank" rel="noopener">
+          <span class="dl-row__no">05</span>
+          <span class="dl-row__t">תשריט קומות 23-26</span>
+          <span class="dl-row__meta">PDF · 414KB</span>
+          <span class="dl-row__type">PDF</span>
+          <span class="dl-row__arrow"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg></span>
+        </a>
+        <!-- TODO(admin): להוסיף כאן את ההסכם, נספח א' והקריטריונים המלאים כשיאושרו לפרסום -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FAQ ============ -->
+  <section class="sect bg-stone" id="faq">
+    <div class="container">
+      <div class="reveal center">
+        <span class="eyebrow">שאלות נפוצות</span>
+        <span class="rule"></span>
+        <h2>מה שחשוב לדעת</h2>
+      </div>
+      <div class="faq mt-4" data-stagger>
+        <details class="reveal"><summary>מתי נידרש להתפנות?</summary><p>לוח הזמנים לפינוי טרם נקבע סופית. ברגע שיהיו תאריכים מחייבים - נפרסם אותם כאן, בציר הזמן ובעדכון אישי לכל דייר. לא תופתעו ברגע האחרון.</p></details>
+        <details class="reveal"><summary>מי משלם את שכר הדירה בתקופת הבנייה?</summary><p>הסדרי הדיור הזמני ושכר הדירה מוגדרים בהסכם הפינוי-בינוי שנחתם מולכם. לפרטים המחייבים עיינו בהסכם, או פנו למנהל קשרי הדיירים ונשמח להסביר.</p></details><!-- TODO(admin): לעדכן תשובה מפורטת לפי ההסכם -->
+        <details class="reveal"><summary>כיצד נקבעת דירת התמורה שלי?</summary><p>שטח הזכאות שלכם קבוע בנספח א׳ להסכם. את הדירה הספציפית בוחרים מתוך הדירות הפנויות המתאימות לזכאות, לפי סדר הבחירה.</p></details>
+        <details class="reveal"><summary>האם אפשר לבחור קומה או כיוון?</summary><p>כן - הבחירה נעשית מתוך הדירות הפנויות בזמן תורכם. ככל שמיקומכם בסדר הבחירה מוקדם יותר, המבחר רחב יותר.</p></details>
+        <details class="reveal"><summary>מה קורה אם איני מרוצה מהאפשרויות?</summary><p>פנו למנהל קשרי הדיירים לפני מועד הבחירה - נעבור יחד על האפשרויות, ההעדפות והפתרונות האפשריים בהתאם להסכם.</p></details>
+        <details class="reveal"><summary>האם ניתן להוסיף כסף ולבחור דירה גדולה יותר?</summary><p>אפשרויות שדרוג בתוספת תשלום נבחנות בהתאם להסכם ולזמינות הדירות. מנהל קשרי הדיירים יפרט את התנאים הרלוונטיים עבורכם.</p></details><!-- TODO(admin): לאשר מדיניות שדרוג -->
+        <details class="reveal"><summary>מי מסייע לנו במעבר?</summary><p>מנהל קשרי הדיירים מלווה כל משפחה באופן אישי - בהכנות, במעבר לדיור הזמני ובחזרה לדירה החדשה.</p></details>
+        <details class="reveal"><summary>מתי אקבל את המפתח לדירה החדשה?</summary><p>עם השלמת הבנייה וקבלת טופס האכלוס. שלב "מסירה ואכלוס" בציר הזמן יתעדכן בתאריכים ברגע שיהיו.</p></details>
+      </div>
+      <div class="faq__icon icon-draw reveal" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><circle pathLength="1" cx="12" cy="12" r="10"/><path pathLength="1" stroke-width="1.2" d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><path pathLength="1" stroke-width="1.7" d="M12 17h.01"/></svg></div>
+    </div>
+  </section>
+
+  <!-- ============ DEVELOPER — textured brand section ============ -->
+  <section class="sect--sm bg-grid" id="developer">
+    <div class="container">
+      <div class="dev-center center reveal">
+        <img class="dev-mark" src="assets/img/glanor-mark.svg" alt="" aria-hidden="true" loading="lazy" />
+        <div>
+          <span class="eyebrow">היזם</span>
+          <span class="rule"></span>
+          <h2 style="font-size:1.8rem">קבוצת גלנור</h2>
+          <p class="dev-quote">חברה משפחתית ירושלמית עם למעלה מ-45 שנות ניסיון בבנייה ובתשתיות. בגלנור מילה היא מילה - והאמון שלכם נבנה משקיפות, זמינות ועמידה בהתחייבויות, לא מסיסמאות.</p>
+          <div class="dev-facts">
+            <div class="dev-fact"><b>45+ שנות ניסיון</b><small>בנייה ותשתיות</small></div>
+            <div class="dev-fact"><b>שקיפות מלאה</b><small>עדכונים שוטפים לדיירים</small></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ GALLERY — featured stage + thumbnails + lightbox ============ -->
+  <section class="sect bg-stone" id="gallery">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">גלריה</span>
+        <span class="rule"></span>
+        <h2 style="font-size:1.8rem">הפרויקט בתמונות</h2>
+      </div>
+      <div class="mt-4 reveal">
+        <div class="stage-wrap">
+          <button class="stage" id="gallery-stage" aria-label="הגדלת התמונה למסך מלא">
+            <img id="stage-img" src="assets/img/renders/tower-evening.jpg" alt="מבט מהרחוב בשעת ערב" loading="lazy" />
+          </button>
+          <button class="stage-nav prev" id="stage-prev" aria-label="התמונה הקודמת"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m9 18 6-6-6-6"/></svg></button>
+          <button class="stage-nav next" id="stage-next" aria-label="התמונה הבאה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+        </div>
+        <div class="thumbs" id="gallery-thumbs" role="listbox" aria-label="בחירת תמונה מהגלריה"></div>
+      </div>
+      <p class="disclaimer mt-3">הדמיות להמחשה בלבד. התכניות המחייבות הן התשריטים החתומים המצורפים להסכם.</p>
+    </div>
+  </section>
+
+  <!-- lightbox (fullscreen viewer) -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="תצוגת תמונה במסך מלא">
+    <div class="lightbox__bar">
+      <span id="lb-counter"></span>
+      <button id="lb-close" aria-label="סגירה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg></button>
+    </div>
+    <button class="lightbox__nav prev" id="lb-prev" aria-label="התמונה הקודמת"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+    <div class="lightbox__img"><img id="lb-img" src="" alt="" /></div>
+    <button class="lightbox__nav next" id="lb-next" aria-label="התמונה הבאה"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+  </div>
+
+  <!-- ============ HELP / CONTACT ============ -->
+  <section class="sect bg-navy" id="help">
+    <div class="container">
+      <div class="help-grid">
+        <div class="reveal">
+          <span class="eyebrow">אנחנו כאן בשבילכם</span>
+          <span class="rule"></span>
+          <h2>צריכים עזרה?</h2>
+          <p>לכל שאלה על התהליך, הזכויות או הדירה שלכם - יש כתובת אחת ברורה. אין שאלה קטנה מדי.</p>
+          <ul class="help-lines">
+            <!-- TODO(admin): להשלים שם, טלפון ודוא"ל של מנהל/ת קשרי הדיירים -->
+            <li><span data-icon="phone"></span> טלפון: יעודכן בקרוב</li>
+            <li><span data-icon="mail"></span> דוא״ל: יעודכן בקרוב</li>
+            <li><span data-icon="calendar"></span> שעות מענה: ימים א-ה, 9:00-17:00</li>
+            <li><span data-icon="pin"></span> דרך חברון 116, ירושלים</li>
+          </ul>
+        </div>
+        <form class="form reveal" onsubmit="event.preventDefault(); this.reset(); document.getElementById('lead-ok').classList.remove('hidden');">
+          <h3>שליחת פנייה</h3>
+          <div class="field mt-3"><label for="cname">שם מלא</label><input id="cname" required placeholder="שם ושם משפחה" /></div>
+          <div class="field"><label for="cphone">טלפון</label><input id="cphone" type="tel" required placeholder="050-000-0000" /></div>
+          <div class="field"><label for="cint">נושא הפנייה</label>
+            <select id="cint"><option>שאלה בנושא בחירת דירה</option><option>תיאום פגישה</option><option>שאלה על הזכאות שלי</option><option>עדכון פרטים</option><option>אחר</option></select>
+          </div>
+          <div class="field"><label for="cmsg">הודעה</label><textarea id="cmsg" rows="3" placeholder="איך נוכל לעזור?"></textarea></div>
+          <button class="btn btn--light" type="submit" style="width:100%">שליחה</button>
+          <p id="lead-ok" class="hidden center mt-2 form-ok">תודה! נחזור אליכם בהקדם. (טופס הדגמה)</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA — the one dominant action ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>האזור האישי שלי</h2>
+      <p>הזכאות שלי, מיקומי בתור, מסמכים וסטטוס.</p>
+      <a href="residents.html#personal" class="btn btn--cta-invert">כניסה לאזור האישי</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <span class="brand-name">דרך חברון 116</span>
+        <p style="max-width:34ch">פורטל הדיירים הרשמי של פרויקט הפינוי-בינוי בדרך חברון 116, ירושלים.</p>
+        <div style="display:flex;align-items:center;gap:.7rem;margin-top:.6rem">
+          <img class="logo-on-dark" src="assets/img/glanor-logo.svg" alt="קבוצת גלנור" loading="lazy" />
+        </div>
+      </div>
+      <div><h4>לדיירים</h4><ul>
+        <li><a href="#process">תהליך הבחירה</a></li>
+        <li><a href="residents.html#catalog">קטלוג הדירות</a></li>
+        <li><a href="residents.html#map">מפת זמינות</a></li>
+        <li><a href="residents.html#personal">האזור האישי</a></li>
+      </ul></div>
+      <div><h4>מידע</h4><ul>
+        <li><a href="#status">סטטוס הפרויקט</a></li>
+        <li><a href="#docs">מסמכים</a></li>
+        <li><a href="#faq">שאלות נפוצות</a></li>
+        <li><a href="#help">צריכים עזרה?</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bar"><div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;width:100%">
+      <span>© 2026 קבוצת גלנור · דרך חברון 116</span><span>נבנה עם <a href="https://einstein-web.co.il" target="_blank" rel="noopener">Einstein-Web</a></span>
+    </div></div>
+  </footer>
+
+  <!-- data + ui (shared) + redesign behaviour -->
+  <script src="assets/js/data/project.js"></script>
+  <script src="assets/js/data/models.js"></script>
+  <script src="assets/js/ui/common.js"></script>
+  <script src="assets/js/ui/redesign.js"></script>
+  <script src="assets/js/ui/design-panel.js"></script>
+</body>
+</html>
