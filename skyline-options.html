@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>דרך חברון 116 — קו האופק: 5 גרסאות</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/redesign.css">
+  <style>
+    .opt-head { max-width: var(--r-maxw); margin-inline: auto; padding: 3.2rem clamp(20px,4vw,40px) 1.4rem; }
+    .opt-head .eyebrow { color: var(--r-petrol); }
+    .opt-head h2 { margin-bottom: .2em; }
+    .opt-head p { color: var(--r-muted, #6b7680); max-width: 72ch; margin: 0; }
+    .page-intro { background: var(--r-navy-deep); color: rgba(255,255,255,.85); padding: 4rem 0 3rem; text-align: center; }
+    .page-intro h1 { color: #fff; font-size: clamp(2rem, 4.5vw, 3rem); }
+    .page-intro p { max-width: 62ch; margin: 1rem auto 0; padding-inline: 20px; }
+    .page-intro .eyebrow { color: var(--r-orange); }
+    .ctx { height: 70px; background: var(--r-paper); }
+
+    .band { position: relative; overflow: hidden; height: clamp(340px, 44vw, 640px); background: linear-gradient(180deg, #103042 0%, var(--r-navy-deep) 85%); }
+    .band::after { content: ''; position: absolute; inset: clamp(14px, 2.2vw, 30px); border: 1px solid rgba(255,255,255,.8); z-index: 3; pointer-events: none; }
+    .band .cap {
+      position: absolute; bottom: 1.4rem; inset-inline-start: clamp(20px, 4vw, 40px); z-index: 4;
+      font-family: 'Heebo', sans-serif; font-weight: 500; font-size: .82rem; letter-spacing: .14em;
+      color: rgba(255,255,255,.85); background: rgba(11,34,48,.35); backdrop-filter: blur(6px);
+      padding: .45rem 1rem; border-radius: 2px;
+    }
+
+    /* The drawing is sized by the band HEIGHT (never crops the tower) and
+       centered; on ultra-wide screens the CSS ground line continues to the
+       edges where the SVG ends. */
+    .band svg {
+      position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+      height: 100%; width: auto; aspect-ratio: 1600 / 520;
+    }
+    .band .ground {
+      position: absolute; left: 0; right: 0; bottom: calc(50 / 520 * 100%);
+      height: 2px; background: rgba(255,255,255,.78); transform: scaleX(0); transform-origin: center;
+    }
+    .band.in .ground { animation: gr 2.4s ease-out forwards; }
+    @keyframes gr { to { transform: scaleX(1); } }
+
+    /* line vocabulary */
+    .ln { fill: none; stroke: rgba(255,255,255,.78); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .ln--soft { stroke: rgba(255,255,255,.32); stroke-width: 1.5; }
+    .ln--faint { stroke: rgba(255,255,255,.55); stroke-width: 1.2; }
+    .ln--orange { stroke: var(--r-orange); stroke-width: 2.4; }
+    .ln--orange-thin { stroke: rgba(241,150,45,.75); stroke-width: 1.2; }
+
+    /* self-drawing: armed per-band when it scrolls into view (.in) */
+    .draw { stroke-dasharray: 100; stroke-dashoffset: 100; }
+    .band.in .draw { animation: draw 3.2s ease-out forwards; }
+    .band.in .draw.d2 { animation-delay: .8s; }
+    .band.in .draw.d3 { animation-delay: 1.6s; }
+    .band.in .draw.d4 { animation-delay: 2.4s; }
+    .band.in .draw.slow { animation-duration: 6s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .fadein { opacity: 0; }
+    .band.in .fadein { animation: fin 1.6s ease-out forwards; }
+    .band.in .fadein.d2 { animation-delay: .9s; }
+    .band.in .fadein.d3 { animation-delay: 1.8s; }
+    @keyframes fin { to { opacity: 1; } }
+    @media (prefers-reduced-motion: reduce) {
+      .draw { stroke-dashoffset: 0 !important; animation: none !important; }
+      .fadein { opacity: 1 !important; animation: none !important; }
+      .band .ground { transform: none !important; animation: none !important; }
+    }
+
+    .lbl { font-family: 'Heebo', sans-serif; font-size: 15px; font-weight: 500; fill: rgba(255,255,255,.8); }
+    .lbl--orange { fill: var(--r-orange); font-weight: 600; }
+
+    /* option 5 — bright inversion */
+    .band-v5 { background: var(--r-paper); }
+    .band-v5::after { border-color: rgba(18,48,63,.4); }
+    .band-v5 .cap { color: var(--r-navy-deep); background: rgba(18,48,63,.08); }
+    .band-v5 .ln { stroke: rgba(18,48,63,.8); }
+    .band-v5 .ln--soft { stroke: rgba(18,48,63,.3); }
+    .band-v5 .ln--faint { stroke: rgba(18,48,63,.5); }
+    .band-v5 .lbl { fill: rgba(18,48,63,.75); }
+    .band-v5 .ground { background: rgba(18,48,63,.8); }
+    .band-v5 .ln--orange { stroke: var(--r-orange); }
+    .band-v5 .ln--orange-thin { stroke: rgba(241,150,45,.75); }
+
+    /* option 3 — lit windows */
+    .win { fill: #f5b45e; opacity: .12; }
+    .band.in .win { animation: winon 1.2s ease-out forwards; }
+    .win.flick { animation: flick 7s ease-in-out infinite !important; }
+    @keyframes winon { to { opacity: .8; } }
+    @keyframes flick { 0%, 100% { opacity: .15; } 45%, 60% { opacity: .85; } }
+    @media (prefers-reduced-motion: reduce) { .win { opacity: .8 !important; animation: none !important; } }
+
+    .pick-note { text-align: center; padding: 3.5rem 20px 5rem; color: var(--r-muted, #6b7680); }
+  </style>
+</head>
+<body>
+
+  <div class="page-intro">
+    <span class="eyebrow">דמו פנימי — לא לפרסום</span>
+    <h1>קו האופק: 5 גרסאות</h1>
+    <p>אותו רעיון — איור קו של קו הרקיע החדש של תלפיות — בחמישה כיווני עיצוב. בכולם המגדל נראה בשלמותו, מהכתר ועד הרחוב, בכל רוחב מסך. האנימציות מתחילות כשמגיעים לרצועה.</p>
+  </div>
+
+  <!-- ============ אפשרות 1 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 1</span>
+    <h2>הקו הקלאסי</h2>
+    <p>הגרסה המזוקקת של הרעיון המקורי: המגדל המלא על 30 קומותיו בכתום, פודיום מסחרי, השכונה הנמוכה, ברושים, גבעות וירח. הכל מצייר את עצמו בשכבות.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v1" style="margin:0">
+    <div class="ground"></div>
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <path class="ln ln--soft draw d4" pathLength="100" d="M0 455 Q 220 425 420 440 T 800 432 T 1180 442 T 1600 430" />
+      <path class="ln draw d2" pathLength="100" d="M200 470 V 400 H 280 V 370 H 365 V 420 H 440 V 470" />
+      <path class="ln--soft ln draw d3" pathLength="100" d="M240 400 V 385 H 265 V 400 M 330 370 V 355 H 355 V 370" />
+      <path class="ln draw d2" pathLength="100" d="M1160 470 V 395 H 1240 V 360 H 1320 V 415 H 1400 V 470" />
+      <path class="ln--soft ln draw d3" pathLength="100" d="M1270 360 V 344 H 1296 V 360" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M500 470 C 490 425 490 395 500 365 C 510 395 510 425 500 470 M 540 470 C 533 435 533 412 540 390 C 547 412 547 435 540 470" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M1085 470 C 1077 432 1077 406 1085 382 C 1093 406 1093 432 1085 470" />
+      <path class="ln ln--orange draw slow" pathLength="100" d="M700 470 V 438 H 740 V 70 H 755 V 46 H 845 V 70 H 860 V 438 H 900 V 470" />
+      <path class="ln ln--orange-thin draw slow d2" pathLength="100" d="M764 84 H836 M764 97 H836 M764 110 H836 M764 123 H836 M764 136 H836 M764 149 H836 M764 162 H836 M764 175 H836 M764 188 H836 M764 201 H836 M764 214 H836 M764 227 H836 M764 240 H836 M764 253 H836 M764 266 H836 M764 279 H836 M764 292 H836 M764 305 H836 M764 318 H836 M764 331 H836 M764 344 H836 M764 357 H836 M764 370 H836 M764 383 H836 M764 396 H836 M764 409 H836 M764 422 H836 M764 435 H836" />
+      <path class="ln draw d2" pathLength="100" d="M790 470 V 450 H 810 V 470" />
+      <circle class="ln ln--soft draw d4" pathLength="100" cx="1270" cy="130" r="32" />
+    </svg>
+    <figcaption class="cap">קו הרקיע החדש של תלפיות</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 2 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 2</span>
+    <h2>בלופרינט</h2>
+    <p>שרטוט אדריכלי: רשת מילימטרית עדינה, קווי מידה, והמגדל המלא עם הערות שרטוט אמיתיות מהפרויקט — 30 קומות, פנטהאוזים, חזית מסחרית. מדבר בשפה של התכניות שהדיירים כבר מכירים.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v2" style="margin:0">
+    <div class="ground"></div>
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <defs>
+        <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+          <path d="M 40 0 H 0 V 40" fill="none" stroke="rgba(255,255,255,.055)" stroke-width="1"/>
+        </pattern>
+      </defs>
+      <rect width="1600" height="520" fill="url(#grid)" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M250 470 V 412 H 340 V 380 H 430 V 430 H 510 V 470" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M1090 470 V 405 H 1180 V 372 H 1270 V 425 H 1350 V 470" />
+      <path class="ln draw slow" pathLength="100" d="M700 470 V 438 H 740 V 70 H 755 V 46 H 845 V 70 H 860 V 438 H 900 V 470" />
+      <path class="ln--faint ln draw slow d2" pathLength="100" d="M764 84 H836 M764 110 H836 M764 136 H836 M764 162 H836 M764 188 H836 M764 214 H836 M764 240 H836 M764 266 H836 M764 292 H836 M764 318 H836 M764 344 H836 M764 370 H836 M764 396 H836 M764 422 H836 M764 448 H836" />
+      <!-- height dimension -->
+      <g class="fadein d2">
+        <path class="ln ln--soft" d="M928 46 h20 M928 470 h20 M938 46 V 470 M932 58 l6 -12 l6 12 M932 458 l6 12 l6 -12" />
+        <text class="lbl" x="958" y="266" text-anchor="start">30 קומות</text>
+      </g>
+      <!-- callouts -->
+      <g class="fadein d3">
+        <path class="ln ln--soft" stroke-dasharray="4 5" d="M845 58 H 1060" />
+        <text class="lbl lbl--orange" x="1070" y="63" text-anchor="start">קומות 27-29 · פנטהאוזים</text>
+        <path class="ln ln--soft" stroke-dasharray="4 5" d="M700 452 H 570" />
+        <text class="lbl" x="560" y="457" text-anchor="end">חזית מסחרית לרחוב</text>
+        <path class="ln ln--soft" stroke-dasharray="4 5" d="M764 253 H 620" />
+        <text class="lbl" x="610" y="258" text-anchor="end">דירות התמורה · קומות 2-22</text>
+      </g>
+      <text class="lbl fadein d3" x="1500" y="500" text-anchor="end" style="letter-spacing:.2em; font-size:13px; opacity:.6">דרך חברון 116 · גיליון 01</text>
+    </svg>
+    <figcaption class="cap">שרטוט קו הרקיע — להמחשה בלבד</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 3 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 3</span>
+    <h2>חלונות נדלקים</h2>
+    <p>שעת ערב: קו הרקיע נשאר איור, אבל חלונות המגדל נדלקים בהדרגה באור חם — וכמה מהם ממשיכים להבהב כאילו החיים כבר שם. שקט, חמים, חי.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v3" style="margin:0">
+    <div class="ground"></div>
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <defs>
+        <radialGradient id="glow" cx="50%" cy="100%" r="70%">
+          <stop offset="0%" stop-color="rgba(241,150,45,.20)"/>
+          <stop offset="100%" stop-color="rgba(241,150,45,0)"/>
+        </radialGradient>
+      </defs>
+      <rect x="450" y="120" width="700" height="400" fill="url(#glow)" class="fadein d2" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M0 455 Q 220 425 420 440 T 800 432 T 1180 442 T 1600 430" />
+      <path class="ln draw d2" pathLength="100" d="M200 470 V 400 H 280 V 370 H 365 V 420 H 440 V 470" />
+      <path class="ln draw d2" pathLength="100" d="M1160 470 V 395 H 1240 V 360 H 1320 V 415 H 1400 V 470" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M500 470 C 490 425 490 395 500 365 C 510 395 510 425 500 470 M 1085 470 C 1077 432 1077 406 1085 382 C 1093 406 1093 432 1085 470" />
+      <path class="ln draw slow" pathLength="100" d="M700 470 V 438 H 740 V 70 H 755 V 46 H 845 V 70 H 860 V 438 H 900 V 470" />
+      <circle class="ln ln--soft draw d4" pathLength="100" cx="1270" cy="130" r="32" />
+      <!-- windows: generated by script into this group -->
+      <g id="wins"></g>
+      <!-- lit windows in the small buildings too -->
+      <rect class="win flick" style="animation-delay:2.5s" x="230" y="416" width="9" height="11" />
+      <rect class="win" x="330" y="384" width="9" height="11" />
+      <rect class="win flick" style="animation-delay:5s" x="1190" y="408" width="9" height="11" />
+      <rect class="win" x="1268" y="374" width="9" height="11" />
+    </svg>
+    <figcaption class="cap">ערב ראשון בבית החדש — להמחשה בלבד</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 4 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 4</span>
+    <h2>קו אחד</h2>
+    <p>כל קו הרקיע — השכונה, הברושים והמגדל — מצויר בקו רציף אחד, כמו ביד, מקצה לקצה. ואז, בסוף, הכתום עובר ומדגיש את המגדל בלבד. הכי אמנותי מהחמישה.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v4" style="margin:0">
+    <div class="ground"></div>
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <path class="ln draw slow" pathLength="100" style="stroke-width:2.2"
+        d="M0 470 H 150 V 424 H 230 V 392 H 315 V 442 H 390 V 470 H 470 L 485 380 L 500 470 H 545 L 557 405 L 569 470 H 700 V 438 H 740 V 70 H 755 V 46 H 845 V 70 H 860 V 438 H 900 V 470 H 1000 L 1013 392 L 1026 470 H 1160 V 402 H 1245 V 368 H 1328 V 422 H 1410 V 470 H 1600" />
+      <path class="ln ln--orange draw slow d3" pathLength="100"
+        d="M740 438 V 70 H 755 V 46 H 845 V 70 H 860 V 438" />
+      <path class="ln ln--orange-thin draw d4" pathLength="100" d="M764 110 H836 M764 175 H836 M764 240 H836 M764 305 H836 M764 370 H836 M764 435 H836" />
+      <circle class="ln ln--soft draw d4" pathLength="100" cx="1270" cy="140" r="32" />
+    </svg>
+    <figcaption class="cap">קו אחד, בית אחד</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 5 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 5</span>
+    <h2>גרסת האור</h2>
+    <p>היפוך מפתיע: במקום פס נייבי כהה — רצועה בהירה בצבע הנייר של האתר, עם האיור בקווי נייבי והמגדל בכתום. נותן לעמוד רגע של אוויר ונשימה בין שני מקטעים.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v5" style="margin:0">
+    <div class="ground"></div>
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+      <path class="ln ln--soft draw d4" pathLength="100" d="M0 455 Q 220 425 420 440 T 800 432 T 1180 442 T 1600 430" />
+      <path class="ln draw d2" pathLength="100" d="M200 470 V 400 H 280 V 370 H 365 V 420 H 440 V 470" />
+      <path class="ln--soft ln draw d3" pathLength="100" d="M240 400 V 385 H 265 V 400 M 330 370 V 355 H 355 V 370" />
+      <path class="ln draw d2" pathLength="100" d="M1160 470 V 395 H 1240 V 360 H 1320 V 415 H 1400 V 470" />
+      <path class="ln--soft ln draw d3" pathLength="100" d="M1270 360 V 344 H 1296 V 360" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M500 470 C 490 425 490 395 500 365 C 510 395 510 425 500 470 M 540 470 C 533 435 533 412 540 390 C 547 412 547 435 540 470" />
+      <path class="ln ln--soft draw d3" pathLength="100" d="M1085 470 C 1077 432 1077 406 1085 382 C 1093 406 1093 432 1085 470" />
+      <path class="ln ln--orange draw slow" pathLength="100" d="M700 470 V 438 H 740 V 70 H 755 V 46 H 845 V 70 H 860 V 438 H 900 V 470" />
+      <path class="ln ln--orange-thin draw slow d2" pathLength="100" d="M764 84 H836 M764 97 H836 M764 110 H836 M764 123 H836 M764 136 H836 M764 149 H836 M764 162 H836 M764 175 H836 M764 188 H836 M764 201 H836 M764 214 H836 M764 227 H836 M764 240 H836 M764 253 H836 M764 266 H836 M764 279 H836 M764 292 H836 M764 305 H836 M764 318 H836 M764 331 H836 M764 344 H836 M764 357 H836 M764 370 H836 M764 383 H836 M764 396 H836 M764 409 H836 M764 422 H836 M764 435 H836" />
+      <path class="ln draw d2" pathLength="100" d="M790 470 V 450 H 810 V 470" />
+      <circle cx="1270" cy="130" r="32" class="fadein d3" fill="rgba(241,150,45,.25)" />
+    </svg>
+    <figcaption class="cap">קו הרקיע החדש של תלפיות</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <p class="pick-note">בחרו מספר (1-5) והאפשרות תיושם בעמוד הבית האמיתי.</p>
+
+  <script>
+    // start each band's animation when it scrolls into view
+    (function () {
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.35 });
+      document.querySelectorAll('.band').forEach(function (b) { io.observe(b); });
+
+      // option 3: tower windows — 5 columns × 14 rows, deterministic pattern
+      var g = document.getElementById('wins');
+      if (g) {
+        var NS = 'http://www.w3.org/2000/svg';
+        var cols = [766, 784, 802, 820, 838];
+        for (var r = 0; r < 14; r++) {
+          for (var c = 0; c < 5; c++) {
+            if ((r * 5 + c) % 7 === 3) continue;            // a few dark windows
+            var w = document.createElementNS(NS, 'rect');
+            w.setAttribute('x', cols[c] - 4); w.setAttribute('y', 88 + r * 26);
+            w.setAttribute('width', 9); w.setAttribute('height', 12);
+            w.setAttribute('class', 'win' + ((r * 5 + c) % 9 === 4 ? ' flick' : ''));
+            w.style.animationDelay = ((r * 5 + c) % 11) * .35 + 's';
+            g.appendChild(w);
+          }
+        }
+      }
+    })();
+  </script>
+
+</body>
+</html>

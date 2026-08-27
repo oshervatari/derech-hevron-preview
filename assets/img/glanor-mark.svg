@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Glanor "A" triangle mark, isolated from the wordmark, keeping the original gold→terracotta→brown gradient. -->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="174.242 2.361 84.975 75.278" role="img" aria-label="סמל קבוצת גלנור">
+  <defs>
+    <linearGradient id="glanorMark" gradientUnits="userSpaceOnUse" x1="174.242" y1="40" x2="259.217" y2="40">
+      <stop offset="0" stop-color="#D3AC6E"/>
+      <stop offset="0.49" stop-color="#B8602E"/>
+      <stop offset="1" stop-color="#683D23"/>
+    </linearGradient>
+  </defs>
+  <path fill="url(#glanorMark)" d="M174.242,77.639h26.517l7.587-15.803c3.918-9.398,3.104-13.997,0-20.46L200,23.995L174.242,77.639z
+    M196.328,2.361l36.371,75.278h26.518l-31.633-65.413c-2.896-6.03-8.993-9.865-15.682-9.865H196.328z"/>
+</svg>

@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>דרך חברון 116 — 5 אפשרויות לרצועת המעבר</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Frank+Ruhl+Libre:wght@400;500;700&family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/redesign.css">
+  <style>
+    .opt-head { max-width: var(--r-maxw); margin-inline: auto; padding: 3.2rem clamp(20px,4vw,40px) 1.4rem; }
+    .opt-head .eyebrow { color: var(--r-petrol); }
+    .opt-head h2 { margin-bottom: .2em; }
+    .opt-head p { color: var(--r-muted, #6b7680); max-width: 72ch; margin: 0; }
+    .page-intro { background: var(--r-navy-deep); color: rgba(255,255,255,.85); padding: 4rem 0 3rem; text-align: center; }
+    .page-intro h1 { color: #fff; font-size: clamp(2rem, 4.5vw, 3rem); }
+    .page-intro p { max-width: 62ch; margin: 1rem auto 0; padding-inline: 20px; }
+    .page-intro .eyebrow { color: var(--r-orange); }
+    .ctx { height: 70px; background: var(--r-paper); }
+
+    /* shared band shell — mirrors .bleed--pano incl. the thin white frame */
+    .band { position: relative; overflow: hidden; height: clamp(320px, 42vw, 620px); background: var(--r-navy-deep); }
+    .band::after { content: ''; position: absolute; inset: clamp(14px, 2.2vw, 30px); border: 1px solid rgba(255,255,255,.8); z-index: 3; pointer-events: none; }
+    .band .cap {
+      position: absolute; bottom: 1.4rem; inset-inline-start: clamp(20px, 4vw, 40px); z-index: 4;
+      font-family: 'Heebo', sans-serif; font-weight: 500; font-size: .82rem; letter-spacing: .14em;
+      color: rgba(255,255,255,.85); background: rgba(11,34,48,.35); backdrop-filter: blur(6px);
+      padding: .45rem 1rem; border-radius: 2px;
+    }
+
+    /* =======================================================================
+     * אפשרות 1 — פנורמת יום: ההדמיה הרחבה בתוך המסגרת, עם זום איטי
+     * ===================================================================== */
+    .band-v1 .img {
+      position: absolute; inset: 0;
+      background: url('assets/img/renders/tower-hills-wide.jpg') center 26% / cover no-repeat;
+      animation: kb1 36s ease-in-out infinite alternate;
+    }
+    @keyframes kb1 { from { transform: scale(1); } to { transform: scale(1.07); } }
+    @media (prefers-reduced-motion: reduce) { .band-v1 .img { animation: none; } }
+
+    /* =======================================================================
+     * אפשרות 2 — הדמיה חיה: ערב, זום איטי, אובך נודד וכוכבים מהבהבים
+     * ===================================================================== */
+    .band-v2 .img {
+      position: absolute; inset: -4%;
+      background: url('assets/img/renders/tower-evening-wide.jpg') center 40% / cover no-repeat;
+      animation: kb2 45s ease-in-out infinite alternate;
+    }
+    @keyframes kb2 { from { transform: scale(1.02) translateX(-1.5%); } to { transform: scale(1.1) translateX(1.5%); } }
+    .band-v2 .haze {
+      position: absolute; inset: -20% -40%; z-index: 1; pointer-events: none; opacity: .5;
+      background:
+        radial-gradient(38% 30% at 22% 26%, rgba(180,200,220,.16) 0%, rgba(180,200,220,0) 100%),
+        radial-gradient(46% 34% at 74% 18%, rgba(160,180,205,.13) 0%, rgba(160,180,205,0) 100%);
+      animation: drift 60s linear infinite alternate;
+    }
+    @keyframes drift { from { transform: translateX(-4%); } to { transform: translateX(4%); } }
+    .band-v2 .star { position: absolute; z-index: 2; width: 3px; height: 3px; border-radius: 50%; background: #fff; opacity: 0; animation: tw 5s ease-in-out infinite; }
+    @keyframes tw { 0%, 100% { opacity: 0; } 50% { opacity: .85; } }
+    @media (prefers-reduced-motion: reduce) { .band-v2 .img, .band-v2 .haze, .band-v2 .star { animation: none; } .band-v2 .star { opacity: .5; } }
+
+    /* =======================================================================
+     * אפשרות 3 — מהתשריט למציאות: סליידר גרירה בין תכנית אדריכלית להדמיה
+     * ===================================================================== */
+    .band-v3 { cursor: ew-resize; touch-action: none; }
+    .band-v3 .layer { position: absolute; inset: 0; background-position: center 42%; background-size: cover; background-repeat: no-repeat; }
+    .band-v3 .plan { background-image: url('assets/img/plans/typical-A-wide.png'); background-color: #fcfbf8; }
+    .band-v3 .real { background-image: url('assets/img/renders/tower-hills-wide.jpg'); clip-path: inset(0 50% 0 0); }
+    .band-v3 .divider { position: absolute; top: 0; bottom: 0; left: 50%; width: 2px; background: #fff; z-index: 2; box-shadow: 0 0 14px rgba(0,0,0,.4); }
+    .band-v3 .knob {
+      position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%); z-index: 3;
+      width: 52px; height: 52px; border-radius: 50%; background: #fff; color: var(--r-navy-deep);
+      display: flex; align-items: center; justify-content: center; gap: 2px;
+      font-weight: 800; box-shadow: 0 6px 18px rgba(0,0,0,.35); user-select: none;
+    }
+    .band-v3 .tag { position: absolute; top: clamp(26px, 4vw, 48px); z-index: 2; font-family: 'Heebo', sans-serif; font-weight: 700; font-size: .85rem; letter-spacing: .1em; padding: .4rem 1rem; border-radius: 2px; }
+    .band-v3 .tag--plan { right: clamp(30px, 5vw, 60px); background: rgba(255,255,255,.85); color: var(--r-navy-deep); }
+    .band-v3 .tag--real { left: clamp(30px, 5vw, 60px); background: rgba(11,34,48,.55); color: #fff; backdrop-filter: blur(4px); }
+
+    /* =======================================================================
+     * אפשרות 4 — קו האופק: איור קו מינימלי של הרקיע, מצייר את עצמו
+     * ===================================================================== */
+    .band-v4 { background: linear-gradient(180deg, #103042 0%, var(--r-navy-deep) 85%); }
+    .band-v4 svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+    .band-v4 .ln { fill: none; stroke: rgba(255,255,255,.75); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; }
+    .band-v4 .ln--soft { stroke: rgba(255,255,255,.3); stroke-width: 1.5; }
+    .band-v4 .ln--orange { stroke: var(--r-orange); stroke-width: 2.5; }
+    .band-v4 .draw { stroke-dasharray: 2400; stroke-dashoffset: 2400; animation: draw 5s ease-out forwards; }
+    .band-v4 .draw.d2 { animation-delay: .9s; }
+    .band-v4 .draw.d3 { animation-delay: 1.8s; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    @media (prefers-reduced-motion: reduce) { .band-v4 .draw { animation: none; stroke-dashoffset: 0; } }
+
+    /* =======================================================================
+     * אפשרות 5 — באנשים: ציטוט גדול בסריף מעל ההדמיה במונוכרום נייבי
+     * ===================================================================== */
+    .band-v5 .img {
+      position: absolute; inset: 0;
+      background: url('assets/img/renders/tower-hills-wide.jpg') center 30% / cover no-repeat;
+      filter: grayscale(1) brightness(1.05);
+      opacity: .5; mix-blend-mode: luminosity;
+    }
+    .band-v5 .tint { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(16,48,66,.55) 0%, rgba(10,30,42,.85) 100%); }
+    .band-v5 .quote {
+      position: relative; z-index: 2; height: 100%; display: flex; flex-direction: column;
+      align-items: center; justify-content: center; text-align: center; padding-inline: clamp(24px, 8vw, 120px);
+    }
+    .band-v5 blockquote {
+      margin: 0; font-family: 'Frank Ruhl Libre', serif; font-weight: 500;
+      font-size: clamp(1.5rem, 3.4vw, 2.7rem); line-height: 1.45; color: #fff; max-width: 26ch;
+    }
+    .band-v5 blockquote b { color: var(--r-orange); font-weight: 700; }
+    .band-v5 .who { margin-top: 1.4rem; font-family: 'Heebo', sans-serif; font-weight: 600; font-size: .9rem; letter-spacing: .18em; color: rgba(255,255,255,.75); }
+
+    .pick-note { text-align: center; padding: 3.5rem 20px 5rem; color: var(--r-muted, #6b7680); }
+  </style>
+</head>
+<body>
+
+  <div class="page-intro">
+    <span class="eyebrow">דמו פנימי — לא לפרסום</span>
+    <h1>רצועת המעבר: 5 אפשרויות</h1>
+    <p>הרצועה שבין "הזכויות שלכם" ל"מה נבנה כאן?" — היום פס נייבי ריק. חמישה כיוונים שונים, חלקם חיים וזזים. גללו ובחרו.</p>
+  </div>
+
+  <!-- ============ אפשרות 1 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 1</span>
+    <h2>פנורמת יום</h2>
+    <p>ההדמיה הרחבה של המגדל ביום, בתוך המסגרת הלבנה הדקה של האתר, עם תנועת זום איטית כמעט בלתי-מורגשת (אפקט Ken Burns). הפתרון הקלאסי לרצועה הזו.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v1" style="margin:0">
+    <div class="img"></div>
+    <figcaption class="cap">הדמיית המגדל — להמחשה בלבד</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 2 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 2</span>
+    <h2>הדמיה חיה</h2>
+    <p>כמעט וידאו: הדמיית הערב בתנועת זום ופנורמה איטית, אובך עננים נודד, וכוכבים שנדלקים ונכבים בשמיים. הכל ב-CSS — בלי קובץ וידאו כבד, רץ חלק גם בנייד.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v2" style="margin:0">
+    <div class="img"></div>
+    <div class="haze"></div>
+    <span class="star" style="top:14%; left:12%; animation-delay:0s"></span>
+    <span class="star" style="top:9%;  left:28%; animation-delay:1.2s"></span>
+    <span class="star" style="top:18%; left:38%; animation-delay:2.6s"></span>
+    <span class="star" style="top:7%;  left:57%; animation-delay:.7s"></span>
+    <span class="star" style="top:15%; left:66%; animation-delay:3.4s"></span>
+    <span class="star" style="top:10%; left:79%; animation-delay:1.9s"></span>
+    <span class="star" style="top:20%; left:88%; animation-delay:4.2s"></span>
+    <span class="star" style="top:24%; left:22%; animation-delay:3s"></span>
+    <figcaption class="cap">הדמיית המגדל בשעת ערב — להמחשה בלבד</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 3 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 3</span>
+    <h2>מהתשריט למציאות</h2>
+    <p>אינטראקטיבי: גררו את הידית — צד אחד תכנית הקומה האדריכלית, צד שני ההדמיה. מספר בלי מילים את הדרך מהנייר אל הבית. עובד גם במגע בנייד.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v3" style="margin:0" id="ba-slider">
+    <div class="layer plan"></div>
+    <div class="layer real" id="ba-real"></div>
+    <div class="divider" id="ba-div"></div>
+    <div class="knob" id="ba-knob" aria-hidden="true">&#x2194;</div>
+    <span class="tag tag--plan">התכנית</span>
+    <span class="tag tag--real">ההדמיה</span>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 4 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 4</span>
+    <h2>קו האופק</h2>
+    <p>איור קו מינימלי של קו הרקיע החדש של תלפיות — השכונה הנמוכה, הברושים, והמגדל בכתום — שמצייר את עצמו בכניסה לאזור. גרפי, שקט, בלי אף תמונה.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v4" style="margin:0">
+    <svg viewBox="0 0 1400 480" preserveAspectRatio="xMidYMax slice" aria-hidden="true">
+      <!-- hills -->
+      <path class="ln ln--soft draw d3" d="M0 415 Q 180 385 340 400 T 700 392 T 1060 402 T 1400 390" />
+      <!-- low neighborhood, right side -->
+      <path class="ln draw d2" d="M905 430 V 360 H 985 V 330 H 1060 V 385 H 1130 V 350 H 1210 V 430" />
+      <path class="ln ln--soft draw d2" d="M1000 330 V 312 H 1028 V 330 M 1150 350 V 336 H 1176 V 350" />
+      <!-- low neighborhood, left side -->
+      <path class="ln draw d2" d="M180 430 V 375 H 262 V 345 H 338 V 395 H 420 V 430" />
+      <path class="ln ln--soft draw d2" d="M230 375 V 358 H 258 V 375 M 350 345 V 330 H 376 V 345" />
+      <!-- cypresses -->
+      <path class="ln ln--soft draw d3" d="M480 430 C 470 380 470 350 480 322 C 490 350 490 380 480 430 M 522 430 C 514 392 514 368 522 346 C 530 368 530 392 522 430" />
+      <path class="ln ln--soft draw d3" d="M866 430 C 858 390 858 364 866 340 C 874 364 874 390 866 430" />
+      <!-- the tower -->
+      <path class="ln ln--orange draw" d="M600 430 V 96 H 640 V 74 H 750 V 96 H 790 V 430" />
+      <path class="ln ln--orange draw" d="M626 132 H 764 M626 168 H 764 M626 204 H 764 M626 240 H 764 M626 276 H 764 M626 312 H 764 M626 348 H 764 M626 384 H 764" style="stroke-width:1.6; opacity:.75" />
+      <!-- ground line -->
+      <path class="ln draw" d="M60 430 H 1340" />
+      <!-- sun/moon disc -->
+      <circle class="ln ln--soft draw d3" cx="1080" cy="150" r="34" />
+    </svg>
+    <figcaption class="cap">קו הרקיע החדש של תלפיות</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <!-- ============ אפשרות 5 ============ -->
+  <div class="opt-head">
+    <span class="eyebrow">אפשרות 5</span>
+    <h2>באנשים</h2>
+    <p>במקום עוד תמונה — רגע שקט: ציטוט היזם בסריף גדול, מעל ההדמיה שנטמעת בנייבי במונוכרום. נותן לרצועה תפקיד רגשי, לא רק ויזואלי.</p>
+  </div>
+  <div class="ctx"></div>
+  <figure class="band band-v5" style="margin:0">
+    <div class="img"></div>
+    <div class="tint"></div>
+    <div class="quote">
+      <blockquote>"בגלנור הכל מתחיל <b>באנשים</b> — והאמון נבנה קומה אחר קומה."</blockquote>
+      <div class="who">קבוצת גלנור · 45 שנות בנייה בירושלים</div>
+    </div>
+  </figure>
+  <div class="ctx"></div>
+
+  <p class="pick-note">בחרו מספר (1-5) והאפשרות תיושם בעמוד הבית האמיתי.</p>
+
+  <script>
+    // before/after slider (option 3): pointer drag sets the clip line
+    (function () {
+      var band = document.getElementById('ba-slider');
+      var real = document.getElementById('ba-real');
+      var div = document.getElementById('ba-div');
+      var knob = document.getElementById('ba-knob');
+      if (!band) return;
+      function setX(clientX) {
+        var r = band.getBoundingClientRect();
+        var p = Math.min(.96, Math.max(.04, (clientX - r.left) / r.width));
+        real.style.clipPath = 'inset(0 ' + ((1 - p) * 100) + '% 0 0)';
+        div.style.left = (p * 100) + '%';
+        knob.style.left = (p * 100) + '%';
+      }
+      var down = false;
+      band.addEventListener('pointerdown', function (e) { down = true; band.setPointerCapture(e.pointerId); setX(e.clientX); });
+      band.addEventListener('pointermove', function (e) { if (down) setX(e.clientX); });
+      band.addEventListener('pointerup', function () { down = false; });
+      band.addEventListener('pointercancel', function () { down = false; });
+    })();
+  </script>
+
+</body>
+</html>

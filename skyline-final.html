@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="robots" content="noindex, nofollow">
+  <title>דרך חברון 116 — קו האופק: הגרסה הסופית</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@400;600;700&family=Heebo:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/redesign.css">
+  <style>
+    .page-intro { background: var(--r-navy-deep); color: rgba(255,255,255,.85); padding: 4rem 0 3rem; text-align: center; }
+    .page-intro h1 { color: #fff; font-size: clamp(2rem, 4.5vw, 3rem); }
+    .page-intro p { max-width: 66ch; margin: 1rem auto 0; padding-inline: 20px; }
+    .page-intro .eyebrow { color: var(--r-orange); }
+    .ctx { height: 70px; background: var(--r-paper); }
+    .pick-note { text-align: center; padding: 3.5rem 20px 5rem; color: var(--r-muted, #6b7680); }
+
+    /* light band, no frame */
+    .band { position: relative; overflow: hidden; height: clamp(340px, 44vw, 640px); background: var(--r-paper); }
+    .band .cap {
+      position: absolute; bottom: 1.4rem; inset-inline-start: clamp(20px, 4vw, 40px); z-index: 4;
+      font-family: 'Heebo', sans-serif; font-weight: 500; font-size: .82rem; letter-spacing: .14em;
+      color: var(--r-navy-deep); background: rgba(18,48,63,.08);
+      padding: .45rem 1rem; border-radius: 2px;
+    }
+    .band svg {
+      position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+      height: 100%; width: auto; aspect-ratio: 1600 / 520;
+      shape-rendering: geometricPrecision;
+    }
+
+    .ln { fill: none; stroke: rgba(18,48,63,.85); stroke-width: 1.8; stroke-linecap: square; stroke-linejoin: miter; }
+    .ln--orange { stroke: var(--r-orange); stroke-width: 2.4; }
+    .ln--orange-thin { stroke: rgba(241,150,45,.8); stroke-width: 1; }
+
+    /* the one line draws itself from edge to edge
+       (dash slightly oversized: with pathLength=100 on a very long path,
+       floating-point error otherwise swallows the tail of the line) */
+    .draw { stroke-dasharray: 104; stroke-dashoffset: 104; }
+    .band.in .draw { animation: draw 5s cubic-bezier(.4,0,.3,1) forwards; }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+
+    /* then the orange rises over the tower, bottom to top */
+    .tower-rise { clip-path: inset(100% 0 0 0); }
+    .band.in .tower-rise { animation: rise 2.2s cubic-bezier(.25,.6,.3,1) forwards; animation-delay: 5s; }
+    @keyframes rise { to { clip-path: inset(-2% 0 0 0); } }
+
+    @media (prefers-reduced-motion: reduce) {
+      .draw { stroke-dasharray: none !important; stroke-dashoffset: 0 !important; animation: none !important; }
+      .tower-rise { clip-path: none !important; animation: none !important; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-intro">
+    <span class="eyebrow">דמו פנימי — לא לפרסום</span>
+    <h1>קו האופק — קו רציף אחד</h1>
+    <p>כמו ברפרנס: כל העיר מצוירת בקו רציף אחד — בניינים צפופים, גבהים משתנים, אנטנות — והמגדל שלנו מתנשא במרכז. הקו מצייר את עצמו מקצה לקצה, ואז הכתום עולה על המגדל מלמטה למעלה. רעננו כדי לראות שוב.</p>
+  </div>
+
+  <div class="ctx"></div>
+  <figure class="band" style="margin:0">
+    <svg viewBox="0 0 1600 520" preserveAspectRatio="xMidYMax meet" aria-hidden="true">
+
+      <!-- one continuous line: ground → dense city rising to the tower → city → ground -->
+      <path class="ln draw" pathLength="100" d="M0 470 H 50
+        V 444 H 85
+        V 410 H 95 V 400 H 125
+        V 432 H 155
+        V 370 H 168 V 352 H 172 V 370 H 195
+        V 402 H 228
+        V 348 H 252 V 340 H 275
+        V 383 H 312
+        V 300 H 332 V 284 H 336 V 300 H 358
+        V 352 H 396
+        V 270 H 448
+        V 330 H 482
+        V 240 H 524
+        V 310 H 562
+        V 210 H 608
+        V 290 H 642
+        V 180 H 692
+        V 260 H 740
+        V 70 H 755 V 46 H 845 V 70 H 860
+        V 250 H 892
+        V 180 H 938
+        V 255 H 968
+        V 210 H 1012
+        V 285 H 1044
+        V 240 H 1088
+        V 308 H 1122
+        V 270 H 1166
+        V 332 H 1202
+        V 300 H 1222 V 284 H 1226 V 300 H 1248
+        V 355 H 1290
+        V 348 H 1312 V 340 H 1334
+        V 385 H 1368
+        V 368 H 1372 V 352 H 1376 V 368 H 1408
+        V 402 H 1442
+        V 400 H 1468 V 410 H 1492
+        V 432 H 1526
+        V 446 H 1562
+        V 470 H 1600" />
+
+      <!-- the orange rises over the tower once the city line is complete -->
+      <g class="tower-rise">
+        <path class="ln ln--orange" d="M740 260 V 70 H 755 V 46 H 845 V 70 H 860 V 250" />
+        <path class="ln ln--orange-thin" d="M752 84 H848 M752 97 H848 M752 110 H848 M752 123 H848 M752 136 H848 M752 149 H848 M752 162 H848 M752 175 H848 M752 188 H848 M752 201 H848 M752 214 H848 M752 227 H848 M752 240 H848" />
+      </g>
+
+    </svg>
+    <figcaption class="cap">קו הרקיע החדש של תלפיות</figcaption>
+  </figure>
+  <div class="ctx"></div>
+
+  <p class="pick-note">זו ההצעה לרצועה. אם טוב — אמרו "אשר" ואיישם בעמוד הבית.</p>
+
+  <script>
+    (function () {
+      document.querySelectorAll('.band svg path').forEach(function (el) {
+        el.setAttribute('vector-effect', 'non-scaling-stroke');
+      });
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+      }, { threshold: 0.35 });
+      document.querySelectorAll('.band').forEach(function (b) { io.observe(b); });
+    })();
+  </script>
+
+</body>
+</html>

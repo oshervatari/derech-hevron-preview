@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>אזור בעלי הדירות - דרך חברון 116 | קבוצת גלנור</title>
+  <meta name="description" content="מידע לבעלי הדירות הקיימים בפרויקט דרך חברון 116: קטלוג הדירות, סדר הבחירה ומפת זמינות המגדל." />
+  <meta name="robots" content="noindex" /><!-- אזור דיירים - לא לאינדוקס -->
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Assistant:wght@300;400;500;600;700&family=Heebo:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/redesign.css" />
+</head>
+<body>
+  <a href="#catalog" class="skip">דלג לתוכן</a>
+
+  <!-- ============ NAV ============ -->
+  <header class="nav" data-nav>
+    <div class="nav__inner">
+      <a class="brand" href="index.html" aria-label="דרך חברון 116 - קבוצת גלנור">
+        <img class="brand__logo" src="assets/img/glanor-logo.svg" alt="קבוצת גלנור" width="117" height="36" />
+      </a>
+      <ul class="nav__links">
+        <li><a href="index.html#status">סטטוס הפרויקט</a></li>
+        <li><a href="index.html#process">תהליך בחירת הדירה</a></li>
+        <li><a href="index.html#docs">מסמכים</a></li>
+        <li><a href="index.html#faq">שאלות נפוצות</a></li>
+        <li><a href="#order">סדר בחירה</a></li>
+      </ul>
+      <div class="nav__cta">
+        <a href="#map" class="btn btn--orange">בחר דירה</a>
+        <button class="nav__toggle" data-nav-toggle data-icon="menu" aria-label="תפריט"></button>
+      </div>
+    </div>
+    <nav class="nav__mobile" data-nav-mobile aria-label="תפריט נייד">
+      <a href="index.html#status">סטטוס הפרויקט</a>
+      <a href="index.html#process">תהליך בחירת הדירה</a>
+      <a href="index.html#docs">מסמכים</a>
+      <a href="index.html#faq">שאלות נפוצות</a>
+      <a href="#order">סדר בחירה</a>
+      <a href="#map">בחר דירה</a>
+    </nav>
+  </header>
+
+  <!-- ============ PAGE HEAD — navy band ============ -->
+  <section class="sect bg-navy page-head" id="top">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">בעלי הדירות הקיימים</span>
+        <span class="rule"></span>
+        <h1>אזור בעלי הדירות</h1>
+      </div>
+      <p class="lead reveal">כאן תמצאו את קטלוג דגמי הדירות במגדל, את סדר הבחירה המעודכן לפי קבוצות התמורה ומועדי החתימה, ואת מפת הזמינות של המגדל.</p>
+    </div>
+  </section>
+
+  <!-- ============ CATALOG ============ -->
+  <section class="sect" id="catalog">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">דירות התמורה</span>
+        <span class="rule"></span>
+        <h2>קטלוג הדירות</h2>
+      </div>
+      <p class="lead reveal">9 דגמים, 3-5 חדרים. השטחים נקראו ישירות מתשריטי האדריכלות. לחצו על דגם לצפייה בתשריט הדירה ובפרטים.</p>
+      <div class="grid grid--3 mt-4" id="type-catalog" data-stagger></div>
+    </div>
+  </section>
+
+  <!-- ============ SELECTION ORDER — navy band ============ -->
+  <section class="sect bg-navy" id="order">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">סדר הבחירה</span>
+        <span class="rule"></span>
+        <h2>סדר הבחירה הנוכחי</h2>
+        <p class="lead" style="color:rgba(255,255,255,.7)">40 בעלי הדירות מחולקים לארבע קבוצות בחירה לפי גודל דירת התמורה - ולכל קבוצה סדר בחירה משלה, עם ראשון ואחרון משלה.</p>
+      </div>
+      <div class="reveal mt-3" id="queue-groups"></div>
+    </div>
+  </section>
+
+  <!-- ============ AVAILABILITY MAP ============ -->
+  <section class="sect bg-stone" id="map">
+    <div class="container">
+      <div class="reveal">
+        <span class="eyebrow">מפת זמינות</span>
+        <span class="rule"></span>
+        <h2>מפת המגדל</h2>
+      </div>
+      <p class="lead reveal">תצוגה אנכית של המגדל לפי קומות. דירות התמורה מסומנות לפי סטטוס; דירות היזם מוצגות באפור. לחיצה על דירת תמורה פותחת את פרטיה, ולחיצה על מספר קומה פותחת את תשריט הקומה.</p>
+      <div class="statstrip mt-4 reveal" id="tower-stats"></div>
+      <div class="card card--pad mt-3 reveal" id="tower-map" style="overflow-x:auto"></div>
+    </div>
+  </section>
+
+  <!-- ============ FINAL CTA ============ -->
+  <section class="cta-band">
+    <div class="container reveal">
+      <h2>יש לכם שאלה?</h2>
+      <p>מנהל קשרי הדיירים כאן בשבילכם - לכל שאלה על התהליך, הזכויות או הדירה שלכם.</p>
+      <a href="index.html#help" class="btn btn--cta-invert">צריכים עזרה?</a>
+    </div>
+  </section>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container footer__grid">
+      <div>
+        <span class="brand-name">דרך חברון 116</span>
+        <p style="max-width:34ch">אזור בעלי הדירות של פרויקט הפינוי-בינוי בדרך חברון 116, ירושלים.</p>
+        <div style="display:flex;align-items:center;gap:.7rem;margin-top:.6rem">
+          <img class="logo-on-dark" src="assets/img/glanor-logo.svg" alt="קבוצת גלנור" loading="lazy" />
+        </div>
+      </div>
+      <div><h4>לדיירים</h4><ul>
+        <li><a href="#catalog">קטלוג הדירות</a></li>
+        <li><a href="#order">סדר הבחירה</a></li>
+        <li><a href="#map">מפת זמינות</a></li>
+      </ul></div>
+      <div><h4>הפרויקט</h4><ul>
+        <li><a href="index.html">אתר הפרויקט</a></li>
+        <li><a href="index.html#status">סטטוס הפרויקט</a></li>
+        <li><a href="index.html#help">צריכים עזרה?</a></li>
+      </ul></div>
+    </div>
+    <div class="footer__bar"><div class="container" style="display:flex;flex-wrap:wrap;justify-content:space-between;gap:.6rem;width:100%">
+      <span>© 2026 קבוצת גלנור · דרך חברון 116</span><span>נבנה עם <a href="https://einstein-web.co.il" target="_blank" rel="noopener">Einstein-Web</a></span>
+    </div></div>
+  </footer>
+
+  <!-- data -->
+  <script src="assets/js/data/project.js"></script>
+  <script src="assets/js/data/models.js"></script>
+  <script src="assets/js/data/tower.js"></script>
+  <script src="assets/js/data/residents.js"></script>
+  <script src="assets/js/data/order.js"></script>
+  <!-- ui -->
+  <script src="assets/js/ui/common.js"></script>
+  <script src="assets/js/ui/residents-ui.js"></script>
+  <script>
+    DH.renderTypeCatalog('#type-catalog');
+    DH.renderSelectionOrder('#queue-groups');
+    DH.renderTowerStats('#tower-stats');
+    DH.renderTowerMap('#tower-map');
+    // initChrome() (common.js) runs on DOMContentLoaded and observes the
+    // dynamically-rendered .reveal nodes above.
+  </script>
+  <script src="assets/js/ui/redesign.js"></script>
+</body>
+</html>
